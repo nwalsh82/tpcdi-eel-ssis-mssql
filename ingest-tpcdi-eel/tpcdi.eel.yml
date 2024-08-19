@@ -226,7 +226,7 @@ target:
 source:
   url: ../Batch1/CustomerMgmt.xml
   read_xml:
-    stylesheet: D:\Sync\repos\eel-Dis\tpcdi\CustomerMgmt.xslt
+    stylesheet: ..\..\tpcdi-eel-ssis-mssql\CustomerMgmt_eel.xslt
     dtype:
       C_PHONE_1_CTRY_CODE: str
       C_PHONE_1_AREA_CODE: str

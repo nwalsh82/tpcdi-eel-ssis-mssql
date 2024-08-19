@@ -1,0 +1,888 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:refId="Package" DTS:CreationDate="11/17/2021 9:09:06 PM" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="DESKTOP-9SV9BNT" DTS:CreatorName="DESKTOP-9SV9BNT\andresespinalh" DTS:DTSID="{FB54740E-2713-4672-B8E3-AD8188B6E718}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="16.0.5467.0" DTS:LocaleID="1033" DTS:MaxConcurrentExecutables="1" DTS:ObjectName="Benchmark 6" DTS:PackageType="5" DTS:VersionBuild="263" DTS:VersionGUID="{BF1F303A-8B8E-421C-BDAC-CAF9A0707AFE}">
+  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[BatchDate.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{D20E8A05-CF2D-4FA6-A30C-0EB4EF26C662}" DTS:ObjectName="BatchDate.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "BatchDate.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\BatchDate.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{638051A0-7ABC-41E1-A027-85E0CF04CF7D}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[CashTransaction.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{4AD59D98-6B73-4E69-B3AD-28E854DEB4C2}" DTS:ObjectName="CashTransaction.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "CashTransaction.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\CashTransaction.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{9C5E8762-27FE-4D5A-A5B2-A9220EAFD85E}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{8642CAFA-ACE3-46E6-951C-1AFC172876F6}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{332E9D3F-168B-47FA-9A15-69336F49FEDA}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 3" DTS:DTSID="{E6B53D59-3E31-4ADD-A68E-52403079CE5B}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[CustomerMgmt.xml]" DTS:CreationName="FILE" DTS:DTSID="{B5433360-F102-4962-8AFF-8A883EBD3383}" DTS:ObjectName="CustomerMgmt.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:ConnectionString="D:\ds\1F11EEBB-28C1-4605-B2D3-32940DB12F8A-TPC-DI-Tool\Tools\Data\SF3\Batch1\CustomerMgmt.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[DailyMarket.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{A072E52B-3289-4EA4-B404-7E6E6DB94778}" DTS:ObjectName="DailyMarket.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "DailyMarket.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\DailyMarket.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{D828E862-7907-4C4A-B897-CE50AC0A81F6}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{5279D7C1-E25F-4895-ADE8-9AC90D5E1F61}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{A4221878-D2BE-478E-A795-C4AB10CAF0C2}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 3" DTS:DTSID="{A503859F-F810-46A1-A0EE-0A90C9524BD2}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 4" DTS:DTSID="{80B8F1F6-9739-449B-8F56-64D246126F5F}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 5" DTS:DTSID="{9C3592F1-FB60-4C0F-BB54-B66D6918A2C6}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[Date.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{C6AC48F2-A7D6-4102-AF3D-59FFF705D1E0}" DTS:ObjectName="Date.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "Date.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\Date.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{AC77CB03-9FB8-4E42-A4BE-04CBDCF7B4B1}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{EBDAAE5B-0F4B-43E1-8CED-B5D398B8566E}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{6B6F19CB-FE42-4482-9505-06D38B3F8548}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 3" DTS:DTSID="{9DE521AC-70D8-47B6-92D7-1F8B941C5D13}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 4" DTS:DTSID="{587A7B9C-A92B-4AD5-800A-851368ADE617}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 5" DTS:DTSID="{652E7D49-F250-49FB-BE5C-729628590033}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 6" DTS:DTSID="{4DCEA9EC-81DE-4244-BCA9-0F2FE5E80093}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 7" DTS:DTSID="{986733AC-1477-4825-BF61-3D8859DAD723}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 8" DTS:DTSID="{D114D297-DC70-4C24-85EE-686AC9CA34CA}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 9" DTS:DTSID="{99C732CE-92BA-42BB-9E90-F25E147CA552}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 10" DTS:DTSID="{A0DC6EA1-7735-4F72-AB0B-A1CE21D1AA90}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 11" DTS:DTSID="{B096B587-7044-4C9B-BE24-8C99C8205EE5}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 12" DTS:DTSID="{B936427B-6E9C-4ECE-84D3-8D877A175B7D}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 13" DTS:DTSID="{E3DF5F9B-6186-4E39-A444-020DC7BBDF69}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 14" DTS:DTSID="{20D13128-7265-451A-BA04-EBD3AB492E78}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 15" DTS:DTSID="{1B9E77F4-CC8D-4662-BB0B-97E26E46CF3A}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 16" DTS:DTSID="{1AD9C5B0-F9ED-4AE0-8438-AD68E2C77133}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 17" DTS:DTSID="{8AAF8A6E-0377-4234-B89A-8D679C664045}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[FINWIRE]" DTS:CreationName="FLATFILE" DTS:DTSID="{9B08190D-27DD-4B07-A36A-123DBA5784A8}" DTS:ObjectName="FINWIRE">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "FINWIRE.fwf"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\FINWIRE.fwf">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="999" DTS:DataType="129" DTS:ObjectName="Record" DTS:DTSID="{47DB9A63-CC7D-4910-85A9-2EC737078F25}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[flatten.xslt]" DTS:CreationName="FILE" DTS:DTSID="{4285BED2-38F5-4DE7-9452-DB42A5E6A10E}" DTS:ObjectName="flatten.xslt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[User::ScriptsPath] + "CustomerMgmt.xslt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:ConnectionString="D:\tpcdi\tpcdi-eel-ssis-mssql\CustomerMgmt.xslt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[HoldingHistory.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{432E56E9-3A11-4D44-A9B0-CE21A181AE37}" DTS:ObjectName="HoldingHistory.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "HoldingHistory.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\HoldingHistory.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{C8E77452-4250-4640-8AD2-D63488B62F41}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{0C719DE1-CC64-403B-AF30-DB5A62DC3F61}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{0BBF8D09-0065-4FD7-910E-9C23FC7F1C8E}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 3" DTS:DTSID="{726DF1CF-EF30-45D1-811F-A2F6F62BB20C}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[HR.csv]" DTS:CreationName="FLATFILE" DTS:DTSID="{E8D7683C-AFE2-4F9C-B2B6-D391623A87DA}" DTS:ObjectName="HR.csv">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "HR.csv"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\HR.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{1477F4C9-0BB1-40C3-B3E9-20132C2ABFE4}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{D147B4DA-5656-4A71-AC68-EFE9366C1555}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{FE56266F-3A6F-4F9E-8814-7E2F537138F3}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 3" DTS:DTSID="{AB66CB77-13FE-40E0-A86C-1D79B1CEB305}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 4" DTS:DTSID="{930F563D-3FDA-4439-95E2-EB4477AC944F}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 5" DTS:DTSID="{9FDB925E-CD94-4701-88AA-3E840565988B}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 6" DTS:DTSID="{CE4C12E6-B5AE-455F-89E2-489873F6531D}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 7" DTS:DTSID="{78EC9ADF-BE5E-4774-AC39-E927E1683750}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 8" DTS:DTSID="{336A3CE0-7EAC-4CB6-8C6B-4DAF9EB134E4}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[Industry.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{B582BEDF-F849-49E6-8CC3-C9B5C03F9E68}" DTS:ObjectName="Industry.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "Industry.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\Industry.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{DEF4E721-F716-4093-874E-B4AE9AD6FA01}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{A2F5677B-D544-48C2-8A81-8666A8DBD55F}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{B52A711D-64B7-4421-A2DB-669454C598D7}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[Prospect.csv]" DTS:CreationName="FLATFILE" DTS:DTSID="{3BE0D4DB-CC34-42DD-8E58-A7DBBAD2F1EB}" DTS:ObjectName="Prospect.csv">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "Prospect.csv"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\Prospect.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{388B19F4-8E03-43A7-86AB-A3B62AB0BDE2}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{54E4AAB0-B59C-499D-B2C9-8F7BF2CC75E5}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{7AB2167C-A580-45CB-B1A2-CD936BB30FE8}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 3" DTS:DTSID="{E2C70C87-D314-4CAB-9DD6-ACA323BB160D}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 4" DTS:DTSID="{DAAA0BEF-5551-46E8-8DD4-C4C8A0612D8E}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 5" DTS:DTSID="{3B811BB0-1467-43E6-BE39-E3E6579AE9B0}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 6" DTS:DTSID="{60A756CB-D58D-41D7-986B-999C1EC74FE1}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 7" DTS:DTSID="{A3289D4F-A4E4-4D9B-82A5-ED9F99BE5C86}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 8" DTS:DTSID="{F1DC9297-B776-489D-A9FA-6AE74A91FA3A}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 9" DTS:DTSID="{C385D7C0-5981-402B-B736-682D107EEBB7}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 10" DTS:DTSID="{CFD65696-3FEE-4A68-A1B0-05B84607E2CC}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 11" DTS:DTSID="{BAF6445A-0EE5-47EB-9E35-9B4C1014CD85}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 12" DTS:DTSID="{D2F91D40-606E-4E38-8E84-E56DB4F814D1}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 13" DTS:DTSID="{1F7B5836-1E34-438F-83B4-6CE47B9A6AB2}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 14" DTS:DTSID="{ADC2B9FC-04B4-464A-B291-E181EE852E43}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 15" DTS:DTSID="{DBD8F72C-0C44-4EE1-A316-5FA825B15EF9}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 16" DTS:DTSID="{F4916AA3-F85F-4702-A6A2-D9ED49F0FDF5}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 17" DTS:DTSID="{F06CFE88-669B-49F9-8E29-6FE7E4EB362E}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 18" DTS:DTSID="{521D8638-03F4-4049-A9FA-233132DAC13F}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 19" DTS:DTSID="{3C5A87D7-B92A-4735-9B46-701F5F4B21A2}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x002C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 20" DTS:DTSID="{89C5AFA9-6F14-4420-83A9-58ED7DB9274C}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 21" DTS:DTSID="{F058A7AB-C747-468E-8E51-2CD89EF955D0}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[SQL Server TPC-DI 1]" DTS:CreationName="OLEDB" DTS:DelayValidation="True" DTS:DTSID="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" DTS:ObjectName="SQL Server TPC-DI 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:ConnectRetryCount="1" DTS:ConnectRetryInterval="5" DTS:ConnectionString="Data Source=localhost\ss2022;Initial Catalog=TPC_DI_DB;Provider=MSOLEDBSQL;Integrated Security=SSPI;Application Name=SSIS-Package-{BA1E61BF-F767-49D4-A2BD-22AA9613C283}SQL Server TPC-DI;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[StatusType.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{6A6D532B-0405-4BB0-9C22-F4757D94406B}" DTS:ObjectName="StatusType.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "StatusType.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\StatusType.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{EAA43377-1097-4DFF-B5AB-670B09568FB0}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{BBB1C0A0-0EB3-422E-AE51-68BD9AC14A2B}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[TaxRate.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{4E21DAE4-3105-4FD6-8530-03CAC13FE507}" DTS:ObjectName="TaxRate.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "TaxRate.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\TaxRate.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{993B96ED-0BD2-44EC-87B8-179BE45046A0}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{3302E18F-F5B3-4FA0-B99D-CD88FEDCD4E1}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{64CC2430-57A4-4A4F-80D7-598651478592}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[Time.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{37E08E7D-0F7C-4467-B1BE-A84F8B3F267D}" DTS:ObjectName="Time.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "Time.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\Time.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{594347F4-E676-498E-9662-8E50301C7A5A}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{E9F95F2E-9DEF-4587-80AA-F5A8E251C0EF}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{C9978E11-058B-4570-871C-BDBF29845446}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 3" DTS:DTSID="{26C5B5B5-A879-4C1A-A198-31C230D4A998}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 4" DTS:DTSID="{19407DD0-FE22-4A44-8837-D77FB31C00BE}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 5" DTS:DTSID="{844FACA1-81C9-4CD2-B208-A2460D35F460}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 6" DTS:DTSID="{73D75337-A740-4312-B113-D06697305236}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 7" DTS:DTSID="{319B93AE-39EA-4133-BF97-ABFF2ECDCEC1}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 8" DTS:DTSID="{60770C77-A392-419D-9EEA-27151DCFBBE1}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 9" DTS:DTSID="{81764F5A-4FD0-4708-AFB8-2C5FE92231DF}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[Trade.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{8E3E06CC-4ADA-4B2F-95FC-22CC890C6F86}" DTS:ObjectName="Trade.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "Trade.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\Trade.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{56766C79-AD90-453B-9B2C-8E68D47079F3}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{BE722F47-01A8-454C-A3B6-CBDE4FFD9CA4}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{CABE04BD-A12A-4023-BA70-FF7FAF78EC1F}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 3" DTS:DTSID="{9C1F6359-D320-4990-93FC-0A6679FD659A}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 4" DTS:DTSID="{F3753DCD-A8F6-4AD1-9507-1DF54867C5E2}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 5" DTS:DTSID="{1E21923F-4F25-4C01-BD5B-659B86ED9F03}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 6" DTS:DTSID="{E74AA896-5664-4E2B-9E3B-ADAFCFAC2697}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 7" DTS:DTSID="{CE8CE4FE-4BBF-441E-AC0B-1AB199B949D9}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 8" DTS:DTSID="{98AB4CAA-C1D6-40BF-9784-13F559765027}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 9" DTS:DTSID="{B8D8D540-9BE2-4484-B5C6-294EF86B8FE5}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 10" DTS:DTSID="{07AFCC13-AD69-4C8C-94C7-8FFE0563A446}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 11" DTS:DTSID="{9FB09AD8-4297-4257-B05B-718207CFE93F}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 12" DTS:DTSID="{5F27BD64-1D34-4244-A252-70311EA1818B}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 13" DTS:DTSID="{97DA5152-4282-4D3C-A117-313BBBC9D2BB}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[TradeHistory.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{58AA4521-6DD3-4DE7-BACD-ADA0C81553C9}" DTS:ObjectName="TradeHistory.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "TradeHistory.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\TradeHistory.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{1578F2DA-5ED6-42A3-A13B-D9F4B563A49F}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{FE192C4B-C82D-4CAC-A243-4E37F4317C81}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{15794C8D-F5E6-45C1-AB77-D98AD5CB4F87}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[TradeType.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{B7363D93-91AC-450A-AE89-7CD2AB8581E2}" DTS:ObjectName="TradeType.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "TradeType.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\TradeType.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{0C035029-1781-4AF2-813C-6E0287540C67}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{B8A46CD4-6005-443E-B112-9384072CEFC1}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{B753E0CB-92AD-472C-B9D0-AB2770D73D3F}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 3" DTS:DTSID="{71E4C5BA-2CD4-4945-ABF5-85E9B71003F0}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[WatchHistory.txt]" DTS:CreationName="FLATFILE" DTS:DTSID="{6DBE8023-8553-4B80-8D98-6B42A5AA8299}" DTS:ObjectName="WatchHistory.txt">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "WatchHistory.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1033" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:RowDelimiter="" DTS:TextQualifier="_x003C_none_x003E_" DTS:CodePage="65001" DTS:ConnectionString="D:\tpcdi\SF3\Batch1\WatchHistory.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 0" DTS:DTSID="{0C035029-1781-4AF2-813C-6E0287540C67}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 1" DTS:DTSID="{B8A46CD4-6005-443E-B112-9384072CEFC1}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x007C_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 2" DTS:DTSID="{B753E0CB-92AD-472C-B9D0-AB2770D73D3F}" DTS:CreationName="" />
+            <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="50" DTS:DataType="129" DTS:TextQualified="True" DTS:ObjectName="Column 3" DTS:DTSID="{71E4C5BA-2CD4-4945-ABF5-85E9B71003F0}" DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter DTS:CreationName="" DTS:DataType="8" DTS:DTSID="{5D8DB124-9B11-481D-922E-EC086E01424A}" DTS:ObjectName="BasePath" DTS:Required="True">
+      <DTS:Property DTS:DataType="8" DTS:Name="ParameterValue">D:\tpcdi\</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter DTS:CreationName="" DTS:DataType="3" DTS:DTSID="{FEB31100-6666-4ECB-A47F-0EF1372DE3D9}" DTS:ObjectName="ScaleFactor" DTS:Required="True">
+      <DTS:Property DTS:DataType="3" DTS:Name="ParameterValue">3</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{C8B709F4-C20E-4E6C-895B-682B8A8E75B2}" DTS:EvaluateAsExpression="True" DTS:Expression="@[$Package::BasePath]" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="BasePath">
+      <DTS:VariableValue DTS:DataType="8">D:\tpcdi\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{693BF22D-693E-4536-9985-7A174C13547F}" DTS:EvaluateAsExpression="True" DTS:Expression="@[User::BasePath] +  &quot;SF&quot; +  (DT_WSTR, 256) @[User::ScaleFactor] + &quot;\\Batch1\\&quot;" DTS:IncludeInDebugDump="2345" DTS:Namespace="Dynamic" DTS:ObjectName="BatchPath">
+      <DTS:VariableValue DTS:DataType="8">D:\tpcdi\SF3\Batch1\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{6DB379FF-6A4F-4FEE-AC27-3FCFAF0697D5}" DTS:EvaluateAsExpression="True" DTS:Expression="@[$Package::ScaleFactor]" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="ScaleFactor">
+      <DTS:VariableValue DTS:DataType="3">3</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{EAF1314D-EC59-4FB0-A286-311FC14173A1}" DTS:EvaluateAsExpression="True" DTS:Expression="@[User::BasePath] + &quot;tpcdi-eel-ssis-mssql\\&quot;" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="ScriptsPath">
+      <DTS:VariableValue DTS:DataType="8">D:\tpcdi\tpcdi-eel-ssis-mssql\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable DTS:refId="Package\BatchDate Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{556AC57A-2373-4256-B7BF-1FB3820677BE}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="BatchDate Bulk Insert" DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{D20E8A05-CF2D-4FA6-A30C-0EB4EF26C662}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[BatchDate]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Comma {,}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\CashTransactions Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{290FDC27-7991-408E-BFE5-F1A42B194281}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="CashTransactions Bulk Insert" DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{4AD59D98-6B73-4E69-B3AD-28E854DEB4C2}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[CashTransaction]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\CustomerMgmt Sequence" DTS:CreationName="STOCK:SEQUENCE" DTS:Description="Sequence Container" DTS:DTSID="{26696E9F-ACE0-46F2-A5C5-4CEAA8A899EE}" DTS:ExecutableType="STOCK:SEQUENCE" DTS:LocaleID="-1" DTS:ObjectName="CustomerMgmt Sequence">
+      <DTS:Variables>
+        <DTS:Variable DTS:CreationName="" DTS:DTSID="{AB75A1DE-AA46-4F4D-8C40-FCFD445AA654}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="FlatXML">
+          <DTS:VariableValue DTS:DataType="8" xml:space="preserve">
+          </DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable DTS:refId="Package\CustomerMgmt Sequence\Apply stylesheet" DTS:CreationName="Microsoft.XMLTask" DTS:Description="XML Task" DTS:DTSID="{44329352-37A8-41A8-9DD5-5BF163DC63E9}" DTS:ExecutableType="Microsoft.XMLTask" DTS:LocaleID="-1" DTS:ObjectName="Apply stylesheet" DTS:TaskContact="XML Task; Microsoft Corporation; SQL Server 2022; � 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1" DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <XMLTaskData OperationType="XSLT" Source="CustomerMgmt.xml" SecondOperandType="FileConnection" SecondOperand="flatten.xslt" SaveOperationResult="True" DestinationType="Variable" Destination="User::FlatXML" OverwriteDestination="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable DTS:refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy" DTS:CreationName="Microsoft.Pipeline" DTS:Description="Data Flow Task" DTS:DTSID="{36FF53F7-B42A-4E0C-91A8-4B6ACA34C312}" DTS:ExecutableType="Microsoft.Pipeline" DTS:LocaleID="-1" DTS:ObjectName="CustomerMgmt Bulk Copy" DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline version="1">
+              <components>
+                <component refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion" componentClassID="Microsoft.DataConvert" contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0" description="Data Conversion" name="Data Conversion" usesDispositions="true">
+                  <inputs>
+                    <input refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Inputs[Data Conversion Input]" name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Inputs[Data Conversion Input].Columns[C_ID]" cachedDataType="ui4" cachedName="C_ID" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ID]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Inputs[Data Conversion Input].Columns[CA_ID]" cachedDataType="ui4" cachedName="CA_ID" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_ID]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Output]" exclusionGroup="1" name="Data Conversion Output" synchronousInputId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Output].Columns[C_ID]" dataType="i4" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Output].Columns[C_ID]" name="C_ID" truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property containsID="true" dataType="System.Int32" description="Specifies the input column used as the source of data for the conversion." name="SourceInputColumnLineageID">#{Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ID]}</property>
+                            <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Output].Columns[CA_ID]" dataType="i4" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Output].Columns[CA_ID]" name="CA_ID" truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property containsID="true" dataType="System.Int32" description="Specifies the input column used as the source of data for the conversion." name="SourceInputColumnLineageID">#{Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_ID]}</property>
+                            <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Error Output]" exclusionGroup="1" isErrorOut="true" name="Data Conversion Error Output" synchronousInputId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]" dataType="i4" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]" name="ErrorCode" specialFlags="1" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]" dataType="i4" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]" name="ErrorColumn" specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination" componentClassID="Microsoft.SQLServerDestination" contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5" description="SQL Server Destination" name="SQL Server Destination" version="5">
+                  <properties>
+                    <property dataType="System.Int32" description="Specifies the column code page to use when code page information is unavailable from the data source." name="DefaultCodePage">1252</property>
+                    <property dataType="System.Boolean" description="Forces the use of the DefaultCodePage property value when describing character data." name="AlwaysUseDefaultCodePage">false</property>
+                    <property dataType="System.String" description="The name of the database object to copy data into." expressionType="Notify" name="BulkInsertTableName">[Source].[CustomerMgmt]</property>
+                    <property dataType="System.Boolean" description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option." name="BulkInsertCheckConstraints">true</property>
+                    <property dataType="System.Int32" description="Specifies the number of the first row to copy. Corresponds to the bulk insert FIRSTROW option." expressionType="Notify" name="BulkInsertFirstRow">-1</property>
+                    <property dataType="System.Boolean" description="Specifies that any insert triggers defined on the destination object will execute during the data copy. Corresponds to the bulk insert FIRE_TRIGGERS option." name="BulkInsertFireTriggers">false</property>
+                    <property dataType="System.Boolean" description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Corresponds to the bulk insert KEEPIDENTITY option." name="BulkInsertKeepIdentity">false</property>
+                    <property dataType="System.Boolean" description="Indicates whether the columns containing null will have null copied to the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on." name="BulkInsertKeepNulls">false</property>
+                    <property dataType="System.Int32" description="Specifies the number of the last row to copy. Corresponds to the bulk insert LASTROW option." expressionType="Notify" name="BulkInsertLastRow">-1</property>
+                    <property dataType="System.Int32" description="Specifies the maximum number of syntax errors and compilation errors that can occur before the data copy operation is canceled. Each row that cannot be copied is ignored and counted as one error. Corresponds to the bulk insert MAXERRORS option." name="BulkInsertMaxErrors">-1</property>
+                    <property dataType="System.String" description="Specifies how the data to be copied is sorted. Corresponds to the bulk insert ORDER option." expressionType="Notify" name="BulkInsertOrder">
+                    </property>
+                    <property dataType="System.Boolean" description="Specifies that a table-level lock is acquired for the duration of the data copy operation. Corresponds to the bulk insert TABLOCK option." name="BulkInsertTablock">true</property>
+                    <property dataType="System.Int32" description="Specifies in seconds the amount of time the SQL Destination adapter will wait before terminating if there is no data available for insertion.  A timeout value of 0 means the SQL Destination adapter will not time out." expressionType="Notify" name="Timeout">30</property>
+                    <property dataType="System.Int32" description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion." name="MaxInsertCommitSize">0</property>
+                  </properties>
+                  <connections>
+                    <connection refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Connections[OleDbConnection]" connectionManagerID="Package.ConnectionManagers[SQL Server TPC-DI 1]" connectionManagerRefId="Package.ConnectionManagers[SQL Server TPC-DI 1]" description="The OLE DB runtime connection used to access the database." name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input]" hasSideEffects="true" name="SQL Server Destination Input">
+                      <inputColumns>
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[ActionType]" cachedDataType="wstr" cachedLength="255" cachedName="ActionType" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[ActionType]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[ActionType]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[ActionTS]" cachedDataType="wstr" cachedLength="255" cachedName="ActionTS" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[ActionTS]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[ActionTS]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_TAX_ID]" cachedDataType="wstr" cachedLength="255" cachedName="C_TAX_ID" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_TAX_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_TAX_ID]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_GNDR]" cachedDataType="wstr" cachedLength="255" cachedName="C_GNDR" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_GNDR]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_GNDR]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_TIER]" cachedDataType="wstr" cachedLength="255" cachedName="C_TIER" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_TIER]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_TIER]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_DOB]" cachedDataType="wstr" cachedLength="255" cachedName="C_DOB" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_DOB]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_DOB]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_L_NAME]" cachedDataType="wstr" cachedLength="255" cachedName="C_L_NAME" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_L_NAME]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_L_NAME]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_F_NAME]" cachedDataType="wstr" cachedLength="255" cachedName="C_F_NAME" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_F_NAME]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_F_NAME]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_M_NAME]" cachedDataType="wstr" cachedLength="255" cachedName="C_M_NAME" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_M_NAME]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_M_NAME]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_ADLINE1]" cachedDataType="wstr" cachedLength="255" cachedName="C_ADLINE1" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_ADLINE1]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ADLINE1]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_ADLINE2]" cachedDataType="wstr" cachedLength="255" cachedName="C_ADLINE2" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_ADLINE2]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ADLINE2]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_ZIPCODE]" cachedDataType="wstr" cachedLength="255" cachedName="C_ZIPCODE" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_ZIPCODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ZIPCODE]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_CITY]" cachedDataType="wstr" cachedLength="255" cachedName="C_CITY" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_CITY]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_CITY]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_STATE_PROV]" cachedDataType="wstr" cachedLength="255" cachedName="C_STATE_PROV" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_STATE_PROV]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_STATE_PROV]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_CTRY]" cachedDataType="wstr" cachedLength="255" cachedName="C_CTRY" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_CTRY]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_CTRY]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PRIM_EMAIL]" cachedDataType="wstr" cachedLength="255" cachedName="C_PRIM_EMAIL" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PRIM_EMAIL]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PRIM_EMAIL]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_ALT_EMAIL]" cachedDataType="wstr" cachedLength="255" cachedName="C_ALT_EMAIL" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_ALT_EMAIL]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ALT_EMAIL]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_1_CTRY_CODE]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_1_CTRY_CODE" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_1_CTRY_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_CTRY_CODE]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_1_AREA_CODE]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_1_AREA_CODE" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_1_AREA_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_AREA_CODE]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_1_LOCAL]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_1_LOCAL" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_1_LOCAL]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_LOCAL]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_1_EXT]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_1_EXT" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_1_EXT]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_EXT]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_2_CTRY_CODE]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_2_CTRY_CODE" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_2_CTRY_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_CTRY_CODE]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_2_AREA_CODE]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_2_AREA_CODE" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_2_AREA_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_AREA_CODE]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_2_LOCAL]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_2_LOCAL" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_2_LOCAL]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_LOCAL]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_2_EXT]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_2_EXT" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_2_EXT]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_EXT]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_3_CTRY_CODE]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_3_CTRY_CODE" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_3_CTRY_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_CTRY_CODE]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_3_AREA_CODE]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_3_AREA_CODE" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_3_AREA_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_AREA_CODE]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_3_LOCAL]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_3_LOCAL" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_3_LOCAL]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_LOCAL]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_PHONE_3_EXT]" cachedDataType="wstr" cachedLength="255" cachedName="C_PHONE_3_EXT" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_3_EXT]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_EXT]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_LCL_TX_ID]" cachedDataType="wstr" cachedLength="255" cachedName="C_LCL_TX_ID" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_LCL_TX_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_LCL_TX_ID]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_NAT_TX_ID]" cachedDataType="wstr" cachedLength="255" cachedName="C_NAT_TX_ID" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_NAT_TX_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_NAT_TX_ID]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[CA_TAX_ST]" cachedDataType="wstr" cachedLength="255" cachedName="CA_TAX_ST" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[CA_TAX_ST]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_TAX_ST]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[CA_B_ID]" cachedDataType="wstr" cachedLength="255" cachedName="CA_B_ID" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[CA_B_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_B_ID]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[CA_NAME]" cachedDataType="wstr" cachedLength="255" cachedName="CA_NAME" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[CA_NAME]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_NAME]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[C_ID]" cachedDataType="i4" cachedName="C_ID" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Output].Columns[C_ID]" />
+                        <inputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[CA_ID]" cachedDataType="i4" cachedName="CA_ID" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[CA_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Output].Columns[CA_ID]" />
+                      </inputColumns>
+                      <externalMetadataColumns isUsed="True">
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[ActionType]" dataType="wstr" length="255" name="ActionType" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[ActionTS]" dataType="wstr" length="255" name="ActionTS" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_ID]" dataType="i4" name="C_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_TAX_ID]" dataType="wstr" length="255" name="C_TAX_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_GNDR]" dataType="wstr" length="255" name="C_GNDR" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_TIER]" dataType="wstr" length="255" name="C_TIER" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_DOB]" dataType="wstr" length="255" name="C_DOB" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_L_NAME]" dataType="wstr" length="255" name="C_L_NAME" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_F_NAME]" dataType="wstr" length="255" name="C_F_NAME" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_M_NAME]" dataType="wstr" length="255" name="C_M_NAME" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_ADLINE1]" dataType="wstr" length="255" name="C_ADLINE1" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_ADLINE2]" dataType="wstr" length="255" name="C_ADLINE2" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_ZIPCODE]" dataType="wstr" length="255" name="C_ZIPCODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_CITY]" dataType="wstr" length="255" name="C_CITY" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_STATE_PROV]" dataType="wstr" length="255" name="C_STATE_PROV" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_CTRY]" dataType="wstr" length="255" name="C_CTRY" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PRIM_EMAIL]" dataType="wstr" length="255" name="C_PRIM_EMAIL" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_ALT_EMAIL]" dataType="wstr" length="255" name="C_ALT_EMAIL" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_1_CTRY_CODE]" dataType="wstr" length="255" name="C_PHONE_1_CTRY_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_1_AREA_CODE]" dataType="wstr" length="255" name="C_PHONE_1_AREA_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_1_LOCAL]" dataType="wstr" length="255" name="C_PHONE_1_LOCAL" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_1_EXT]" dataType="wstr" length="255" name="C_PHONE_1_EXT" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_2_CTRY_CODE]" dataType="wstr" length="255" name="C_PHONE_2_CTRY_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_2_AREA_CODE]" dataType="wstr" length="255" name="C_PHONE_2_AREA_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_2_LOCAL]" dataType="wstr" length="255" name="C_PHONE_2_LOCAL" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_2_EXT]" dataType="wstr" length="255" name="C_PHONE_2_EXT" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_3_CTRY_CODE]" dataType="wstr" length="255" name="C_PHONE_3_CTRY_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_3_AREA_CODE]" dataType="wstr" length="255" name="C_PHONE_3_AREA_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_3_LOCAL]" dataType="wstr" length="255" name="C_PHONE_3_LOCAL" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_PHONE_3_EXT]" dataType="wstr" length="255" name="C_PHONE_3_EXT" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_LCL_TX_ID]" dataType="wstr" length="255" name="C_LCL_TX_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[C_NAT_TX_ID]" dataType="wstr" length="255" name="C_NAT_TX_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[CA_ID]" dataType="i4" name="CA_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[CA_TAX_ST]" dataType="wstr" length="255" name="CA_TAX_ST" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[CA_B_ID]" dataType="wstr" length="255" name="CA_B_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[CA_NAME]" dataType="wstr" length="255" name="CA_NAME" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source" componentClassID="Microsoft.ManagedComponentHost" contactInfo="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2" description="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element." name="XML Source" usesDispositions="true" validateExternalMetadata="False" version="2">
+                  <properties>
+                    <property dataType="System.String" name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                    <property dataType="System.String" description="The XML data used by the XML source adapter." expressionType="Notify" name="XMLData">
+                    </property>
+                    <property dataType="System.String" description="The variable used by the XML source adapter to specify XML data." name="XMLDataVariable">User::FlatXML</property>
+                    <property dataType="System.Int32" description="Defines how the XML source adapter gets XML data." name="AccessMode">2</property>
+                    <property dataType="System.String" description="The XML schema definition used by the XML source adapter." expressionType="Notify" name="XMLSchemaDefinition">
+                    </property>
+                    <property dataType="System.Boolean" description="Identifies whether or not to use inline schema." name="UseInlineSchema">true</property>
+                    <property dataType="System.Int32" description="Defines how XML integer types are mapped." name="XMLIntegerMapping" typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+                  </properties>
+                  <outputs>
+                    <output refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record]" name="record">
+                      <properties>
+                        <property dataType="System.String" description="Identifies the rowset associated with the output." name="RowsetID">record</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[ActionType]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[ActionType]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[ActionType]" name="ActionType" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[ActionTS]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[ActionTS]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[ActionTS]" name="ActionTS" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ID]" dataType="ui4" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ID]" name="C_ID" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_TAX_ID]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_TAX_ID]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_TAX_ID]" name="C_TAX_ID" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_GNDR]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_GNDR]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_GNDR]" name="C_GNDR" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_TIER]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_TIER]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_TIER]" name="C_TIER" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_DOB]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_DOB]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_DOB]" name="C_DOB" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_L_NAME]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_L_NAME]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_L_NAME]" name="C_L_NAME" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_F_NAME]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_F_NAME]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_F_NAME]" name="C_F_NAME" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_M_NAME]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_M_NAME]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_M_NAME]" name="C_M_NAME" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ADLINE1]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_ADLINE1]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ADLINE1]" name="C_ADLINE1" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ADLINE2]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_ADLINE2]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ADLINE2]" name="C_ADLINE2" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ZIPCODE]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_ZIPCODE]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ZIPCODE]" name="C_ZIPCODE" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_CITY]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_CITY]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_CITY]" name="C_CITY" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_STATE_PROV]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_STATE_PROV]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_STATE_PROV]" name="C_STATE_PROV" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_CTRY]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_CTRY]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_CTRY]" name="C_CTRY" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PRIM_EMAIL]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PRIM_EMAIL]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PRIM_EMAIL]" name="C_PRIM_EMAIL" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ALT_EMAIL]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_ALT_EMAIL]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_ALT_EMAIL]" name="C_ALT_EMAIL" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_CTRY_CODE]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_1_CTRY_CODE]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_CTRY_CODE]" name="C_PHONE_1_CTRY_CODE" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_AREA_CODE]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_1_AREA_CODE]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_AREA_CODE]" name="C_PHONE_1_AREA_CODE" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_LOCAL]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_1_LOCAL]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_LOCAL]" name="C_PHONE_1_LOCAL" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_EXT]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_1_EXT]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_1_EXT]" name="C_PHONE_1_EXT" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_CTRY_CODE]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_2_CTRY_CODE]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_CTRY_CODE]" name="C_PHONE_2_CTRY_CODE" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_AREA_CODE]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_2_AREA_CODE]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_AREA_CODE]" name="C_PHONE_2_AREA_CODE" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_LOCAL]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_2_LOCAL]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_LOCAL]" name="C_PHONE_2_LOCAL" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_EXT]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_2_EXT]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_2_EXT]" name="C_PHONE_2_EXT" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_CTRY_CODE]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_3_CTRY_CODE]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_CTRY_CODE]" name="C_PHONE_3_CTRY_CODE" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_AREA_CODE]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_3_AREA_CODE]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_AREA_CODE]" name="C_PHONE_3_AREA_CODE" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_LOCAL]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_3_LOCAL]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_LOCAL]" name="C_PHONE_3_LOCAL" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_EXT]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_3_EXT]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_PHONE_3_EXT]" name="C_PHONE_3_EXT" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_LCL_TX_ID]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_LCL_TX_ID]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_LCL_TX_ID]" name="C_LCL_TX_ID" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_NAT_TX_ID]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_NAT_TX_ID]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[C_NAT_TX_ID]" name="C_NAT_TX_ID" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_ID]" dataType="ui4" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[CA_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_ID]" name="CA_ID" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_TAX_ST]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[CA_TAX_ST]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_TAX_ST]" name="CA_TAX_ST" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_B_ID]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[CA_B_ID]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_B_ID]" name="CA_B_ID" truncationRowDisposition="FailComponent" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_NAME]" dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[CA_NAME]" length="255" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].Columns[CA_NAME]" name="CA_NAME" truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns isUsed="True">
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[ActionType]" dataType="wstr" length="255" name="ActionType">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[ActionTS]" dataType="wstr" length="255" name="ActionTS">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_ID]" dataType="ui4" name="C_ID">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.UInt32</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_TAX_ID]" dataType="wstr" length="255" name="C_TAX_ID">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_GNDR]" dataType="wstr" length="255" name="C_GNDR">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_TIER]" dataType="wstr" length="255" name="C_TIER">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_DOB]" dataType="wstr" length="255" name="C_DOB">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_L_NAME]" dataType="wstr" length="255" name="C_L_NAME">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_F_NAME]" dataType="wstr" length="255" name="C_F_NAME">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_M_NAME]" dataType="wstr" length="255" name="C_M_NAME">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_ADLINE1]" dataType="wstr" length="255" name="C_ADLINE1">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_ADLINE2]" dataType="wstr" length="255" name="C_ADLINE2">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_ZIPCODE]" dataType="wstr" length="255" name="C_ZIPCODE">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_CITY]" dataType="wstr" length="255" name="C_CITY">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_STATE_PROV]" dataType="wstr" length="255" name="C_STATE_PROV">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_CTRY]" dataType="wstr" length="255" name="C_CTRY">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PRIM_EMAIL]" dataType="wstr" length="255" name="C_PRIM_EMAIL">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_ALT_EMAIL]" dataType="wstr" length="255" name="C_ALT_EMAIL">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_1_CTRY_CODE]" dataType="wstr" length="255" name="C_PHONE_1_CTRY_CODE">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_1_AREA_CODE]" dataType="wstr" length="255" name="C_PHONE_1_AREA_CODE">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_1_LOCAL]" dataType="wstr" length="255" name="C_PHONE_1_LOCAL">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_1_EXT]" dataType="wstr" length="255" name="C_PHONE_1_EXT">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_2_CTRY_CODE]" dataType="wstr" length="255" name="C_PHONE_2_CTRY_CODE">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_2_AREA_CODE]" dataType="wstr" length="255" name="C_PHONE_2_AREA_CODE">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_2_LOCAL]" dataType="wstr" length="255" name="C_PHONE_2_LOCAL">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_2_EXT]" dataType="wstr" length="255" name="C_PHONE_2_EXT">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_3_CTRY_CODE]" dataType="wstr" length="255" name="C_PHONE_3_CTRY_CODE">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_3_AREA_CODE]" dataType="wstr" length="255" name="C_PHONE_3_AREA_CODE">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_3_LOCAL]" dataType="wstr" length="255" name="C_PHONE_3_LOCAL">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_PHONE_3_EXT]" dataType="wstr" length="255" name="C_PHONE_3_EXT">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_LCL_TX_ID]" dataType="wstr" length="255" name="C_LCL_TX_ID">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[C_NAT_TX_ID]" dataType="wstr" length="255" name="C_NAT_TX_ID">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[CA_ID]" dataType="ui4" name="CA_ID">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.UInt32</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[CA_TAX_ST]" dataType="wstr" length="255" name="CA_TAX_ST">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[CA_B_ID]" dataType="wstr" length="255" name="CA_B_ID">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record].ExternalColumns[CA_NAME]" dataType="wstr" length="255" name="CA_NAME">
+                          <properties>
+                            <property dataType="System.String" name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </output>
+                    <output refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output]" isErrorOut="true" name="record Error Output">
+                      <properties>
+                        <property dataType="System.String" description="Identifies the rowset associated with the output." name="RowsetID">record</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[ActionType]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[ActionType]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[ActionType]" name="ActionType" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[ActionTS]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[ActionTS]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[ActionTS]" name="ActionTS" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_ID]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_ID]" name="C_ID" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_TAX_ID]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_TAX_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_TAX_ID]" name="C_TAX_ID" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_GNDR]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_GNDR]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_GNDR]" name="C_GNDR" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_TIER]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_TIER]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_TIER]" name="C_TIER" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_DOB]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_DOB]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_DOB]" name="C_DOB" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_L_NAME]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_L_NAME]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_L_NAME]" name="C_L_NAME" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_F_NAME]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_F_NAME]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_F_NAME]" name="C_F_NAME" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_M_NAME]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_M_NAME]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_M_NAME]" name="C_M_NAME" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_ADLINE1]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_ADLINE1]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_ADLINE1]" name="C_ADLINE1" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_ADLINE2]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_ADLINE2]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_ADLINE2]" name="C_ADLINE2" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_ZIPCODE]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_ZIPCODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_ZIPCODE]" name="C_ZIPCODE" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_CITY]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_CITY]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_CITY]" name="C_CITY" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_STATE_PROV]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_STATE_PROV]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_STATE_PROV]" name="C_STATE_PROV" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_CTRY]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_CTRY]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_CTRY]" name="C_CTRY" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PRIM_EMAIL]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PRIM_EMAIL]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PRIM_EMAIL]" name="C_PRIM_EMAIL" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_ALT_EMAIL]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_ALT_EMAIL]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_ALT_EMAIL]" name="C_ALT_EMAIL" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_1_CTRY_CODE]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_1_CTRY_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_1_CTRY_CODE]" name="C_PHONE_1_CTRY_CODE" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_1_AREA_CODE]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_1_AREA_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_1_AREA_CODE]" name="C_PHONE_1_AREA_CODE" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_1_LOCAL]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_1_LOCAL]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_1_LOCAL]" name="C_PHONE_1_LOCAL" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_1_EXT]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_1_EXT]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_1_EXT]" name="C_PHONE_1_EXT" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_2_CTRY_CODE]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_2_CTRY_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_2_CTRY_CODE]" name="C_PHONE_2_CTRY_CODE" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_2_AREA_CODE]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_2_AREA_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_2_AREA_CODE]" name="C_PHONE_2_AREA_CODE" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_2_LOCAL]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_2_LOCAL]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_2_LOCAL]" name="C_PHONE_2_LOCAL" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_2_EXT]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_2_EXT]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_2_EXT]" name="C_PHONE_2_EXT" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_3_CTRY_CODE]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_3_CTRY_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_3_CTRY_CODE]" name="C_PHONE_3_CTRY_CODE" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_3_AREA_CODE]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_3_AREA_CODE]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_3_AREA_CODE]" name="C_PHONE_3_AREA_CODE" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_3_LOCAL]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_3_LOCAL]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_3_LOCAL]" name="C_PHONE_3_LOCAL" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_3_EXT]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_3_EXT]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_PHONE_3_EXT]" name="C_PHONE_3_EXT" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_LCL_TX_ID]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_LCL_TX_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_LCL_TX_ID]" name="C_LCL_TX_ID" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_NAT_TX_ID]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_NAT_TX_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[C_NAT_TX_ID]" name="C_NAT_TX_ID" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[CA_ID]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[CA_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[CA_ID]" name="CA_ID" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[CA_TAX_ST]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[CA_TAX_ST]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[CA_TAX_ST]" name="CA_TAX_ST" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[CA_B_ID]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[CA_B_ID]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[CA_B_ID]" name="CA_B_ID" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[CA_NAME]" dataType="nText" externalMetadataColumnId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[CA_NAME]" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[CA_NAME]" name="CA_NAME" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[ErrorCode]" dataType="i4" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[ErrorCode]" name="ErrorCode" specialFlags="1" />
+                        <outputColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[ErrorColumn]" dataType="i4" lineageId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].Columns[ErrorColumn]" name="ErrorColumn" specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns isUsed="True">
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[ActionType]" dataType="nText" name="ActionType" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[ActionTS]" dataType="nText" name="ActionTS" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_ID]" dataType="nText" name="C_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_TAX_ID]" dataType="nText" name="C_TAX_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_GNDR]" dataType="nText" name="C_GNDR" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_TIER]" dataType="nText" name="C_TIER" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_DOB]" dataType="nText" name="C_DOB" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_L_NAME]" dataType="nText" name="C_L_NAME" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_F_NAME]" dataType="nText" name="C_F_NAME" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_M_NAME]" dataType="nText" name="C_M_NAME" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_ADLINE1]" dataType="nText" name="C_ADLINE1" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_ADLINE2]" dataType="nText" name="C_ADLINE2" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_ZIPCODE]" dataType="nText" name="C_ZIPCODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_CITY]" dataType="nText" name="C_CITY" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_STATE_PROV]" dataType="nText" name="C_STATE_PROV" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_CTRY]" dataType="nText" name="C_CTRY" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PRIM_EMAIL]" dataType="nText" name="C_PRIM_EMAIL" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_ALT_EMAIL]" dataType="nText" name="C_ALT_EMAIL" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_1_CTRY_CODE]" dataType="nText" name="C_PHONE_1_CTRY_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_1_AREA_CODE]" dataType="nText" name="C_PHONE_1_AREA_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_1_LOCAL]" dataType="nText" name="C_PHONE_1_LOCAL" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_1_EXT]" dataType="nText" name="C_PHONE_1_EXT" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_2_CTRY_CODE]" dataType="nText" name="C_PHONE_2_CTRY_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_2_AREA_CODE]" dataType="nText" name="C_PHONE_2_AREA_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_2_LOCAL]" dataType="nText" name="C_PHONE_2_LOCAL" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_2_EXT]" dataType="nText" name="C_PHONE_2_EXT" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_3_CTRY_CODE]" dataType="nText" name="C_PHONE_3_CTRY_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_3_AREA_CODE]" dataType="nText" name="C_PHONE_3_AREA_CODE" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_3_LOCAL]" dataType="nText" name="C_PHONE_3_LOCAL" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_PHONE_3_EXT]" dataType="nText" name="C_PHONE_3_EXT" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_LCL_TX_ID]" dataType="nText" name="C_LCL_TX_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[C_NAT_TX_ID]" dataType="nText" name="C_NAT_TX_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[CA_ID]" dataType="nText" name="CA_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[CA_TAX_ST]" dataType="nText" name="CA_TAX_ST" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[CA_B_ID]" dataType="nText" name="CA_B_ID" />
+                        <externalMetadataColumn refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record Error Output].ExternalColumns[CA_NAME]" dataType="nText" name="CA_NAME" />
+                      </externalMetadataColumns>
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy.Paths[Data Conversion Output]" endId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\SQL Server Destination.Inputs[SQL Server Destination Input]" name="Data Conversion Output" startId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Outputs[Data Conversion Output]" />
+                <path refId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy.Paths[record]" endId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\Data Conversion.Inputs[Data Conversion Input]" name="record" startId="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy\XML Source.Outputs[record]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint DTS:refId="Package\CustomerMgmt Sequence.PrecedenceConstraints[Constraint 42]" DTS:CreationName="" DTS:DTSID="{244ECC8F-44CD-482A-91F0-296AD139C0E3}" DTS:From="Package\CustomerMgmt Sequence\Apply stylesheet" DTS:LogicalAnd="True" DTS:ObjectName="Constraint 42" DTS:To="Package\CustomerMgmt Sequence\CustomerMgmt Bulk Copy" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\DailyMarkets Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{402C9884-D4E6-47A6-B7E3-DF1BCCCE9AE1}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="DailyMarkets Bulk Insert" DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{A072E52B-3289-4EA4-B404-7E6E6DB94778}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[DailyMarket]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\Date Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{5B761598-9C8E-4BF0-81B1-A28E06E97069}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="Date Bulk Insert" DTS:ThreadHint="6">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{C6AC48F2-A7D6-4102-AF3D-59FFF705D1E0}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[Date]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\FINWIRE Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{E4A3F0D8-48A3-4718-8557-70CE4C073B37}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="FINWIRE Bulk Insert" DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:CheckConstraints="False" BulkInsertTask:SourceConnectionName="{9B08190D-27DD-4B07-A36A-123DBA5784A8}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[Finwire]" BulkInsertTask:TableLock="True" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\HoldingHistory Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{9A127BAC-8E70-4E2D-A3F6-3EB39C436C3D}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="HoldingHistory Bulk Insert" DTS:ThreadHint="7">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{432E56E9-3A11-4D44-A9B0-CE21A181AE37}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[HoldingHistory]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\HR Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{B21EBEAE-D4F9-4BAF-9D7C-741798E3E717}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="HR Bulk Insert" DTS:ThreadHint="8">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{E8D7683C-AFE2-4F9C-B2B6-D391623A87DA}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[HR]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Comma {,}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\Industry Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{6A3A4393-8676-49B5-98B2-1639544E5280}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="Industry Bulk Insert" DTS:ThreadHint="5">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{B582BEDF-F849-49E6-8CC3-C9B5C03F9E68}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[Industry]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\Prospect Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{59BDA718-E9AB-4B47-867F-09DCF2E6DCBD}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="Prospect Bulk Insert" DTS:ThreadHint="9">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{3BE0D4DB-CC34-42DD-8E58-A7DBBAD2F1EB}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[Prospect]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Comma {,}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\StatusType Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{79D29B4F-FEC9-45E2-A776-451A4D99F4A6}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="StatusType Bulk Insert" DTS:ThreadHint="10">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{6A6D532B-0405-4BB0-9C22-F4757D94406B}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[StatusType]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\TaxRate Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{DA1D385C-96DE-406D-895F-2112897B8AFF}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="TaxRate Bulk Insert" DTS:ThreadHint="11">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{4E21DAE4-3105-4FD6-8530-03CAC13FE507}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[TaxRate]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\Time Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{59BD7CAB-230F-46F0-B35F-F2EB8909F69B}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="Time Bulk Insert" DTS:ThreadHint="13">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{37E08E7D-0F7C-4467-B1BE-A84F8B3F267D}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[Time]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\Trade Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{A68CB587-BA59-4D01-8A7D-8541D7426442}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="Trade Bulk Insert" DTS:ThreadHint="12">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{8E3E06CC-4ADA-4B2F-95FC-22CC890C6F86}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[Trade]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\TradeHistory Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{7D69A4D3-E759-4E5D-A345-CD3E5EA931C4}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="TradeHistory Bulk Insert" DTS:ThreadHint="14">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{58AA4521-6DD3-4DE7-BACD-ADA0C81553C9}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[TradeHistory]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\TradeType Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{F8B3425F-0F36-4F88-AFC5-296E5510AFA5}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="TradeType Bulk Insert" DTS:ThreadHint="15">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{B7363D93-91AC-450A-AE89-7CD2AB8581E2}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[TradeType]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\WatchHistory Bulk Insert" DTS:CreationName="Microsoft.BulkInsertTask" DTS:Description="Bulk Insert Task" DTS:DTSID="{AD4E90F4-EDFC-469E-ABBA-36D55F4EC1F1}" DTS:ExecutableType="Microsoft.BulkInsertTask" DTS:LocaleID="-1" DTS:ObjectName="WatchHistory Bulk Insert" DTS:ThreadHint="16">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData BulkInsertTask:SourceConnectionName="{6DBE8023-8553-4B80-8D98-6B42A5AA8299}" BulkInsertTask:DestinationConnectionName="{BA1E61BF-F767-49D4-A2BD-22AA9613C283}" BulkInsertTask:DestinationTableName="[Source].[WatchHistory]" BulkInsertTask:TableLock="True" BulkInsertTask:FieldTerminator="Vertical Bar {|}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

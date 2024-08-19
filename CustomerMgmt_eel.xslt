@@ -1,63 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:TPCDI="http://www.tpc.org/tpc-di" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!-- Inline schema definition -->
-    <!-- <xsl:template match="/">
-        
-    </xsl:template> -->
-
-
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:TPCDI="http://www.tpc.org/tpc-di">
     <!-- Match the root element -->
-    <!--<xsl:param name="maxRows" select="200"/>-->
+    <xsl:param name="maxRows" select="200"/>
     <xsl:template match="/TPCDI:Actions">
         <root>
-            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-                <xsd:element name="root">
-                    <xsd:complexType>
-                        <xsd:sequence>
-                            <xsd:element name="record" maxOccurs="unbounded">
-                                <xsd:complexType>
-                                    <xsd:attribute name="ActionType" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="ActionTS" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_ID" type="xsd:unsignedInt" use="optional" />
-                                    <xsd:attribute name="C_TAX_ID" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_GNDR" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_TIER" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_DOB" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_L_NAME" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_F_NAME" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_M_NAME" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_ADLINE1" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_ADLINE2" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_ZIPCODE" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_CITY" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_STATE_PROV" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_CTRY" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PRIM_EMAIL" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_ALT_EMAIL" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_1_CTRY_CODE" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_1_AREA_CODE" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_1_LOCAL" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_1_EXT" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_2_CTRY_CODE" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_2_AREA_CODE" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_2_LOCAL" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_2_EXT" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_3_CTRY_CODE" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_3_AREA_CODE" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_3_LOCAL" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_PHONE_3_EXT" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_LCL_TX_ID" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="C_NAT_TX_ID" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="CA_ID" type="xsd:unsignedInt" use="optional" />
-                                    <xsd:attribute name="CA_TAX_ST" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="CA_B_ID" type="xsd:string" use="optional" />
-                                    <xsd:attribute name="CA_NAME" type="xsd:string" use="optional" />
-                                </xsd:complexType>
-                            </xsd:element>
-                        </xsd:sequence>
-                    </xsd:complexType>
-                </xsd:element>
-            </xsd:schema>
             <!-- <xsl:for-each select="TPCDI:Action[position() &lt;= $maxRows]"> -->
             <xsl:for-each select="TPCDI:Action"> 
                 <record>
