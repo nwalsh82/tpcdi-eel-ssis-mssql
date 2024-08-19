@@ -1,0 +1,242 @@
+source:
+  url: ../Batch1/BatchDate.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - BatchDate
+---
+source:
+  url: ../Batch1/CashTransaction.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - CT_CA_ID
+      - CT_DTS
+      - CT_AMT
+      - CT_NAME
+---
+source:
+  url: ../Batch1/DailyMarket.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - DM_DATE
+      - DM_S_SYMB
+      - DM_CLOSE
+      - DM_HIGH
+      - DM_LOW
+      - DM_VOL
+---
+source:
+  url: ../Batch1/Date.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - SK_DateID
+      - DateValue
+      - DateDesc
+      - CalendarYearID
+      - CalendarYearDesc
+      - CalendarQtrID
+      - CalendarQtrDesc
+      - CalendarMonthID
+      - CalendarMonthDesc
+      - CalendarWeekID
+      - CalendarWeekDesc
+      - DayOfWeekNum
+      - DayOfWeekDesc
+      - FiscalYearID
+      - FiscalYearDesc
+      - FiscalQtrID
+      - FiscalQtrDesc
+      - HolidayFlag
+    dtype:
+      HolidayFlag: str
+---
+source:
+  url: ../Batch1/HoldingHistory.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - HH_H_T_ID
+      - HH_T_ID
+      - HH_BEFORE_QTY
+      - HH_AFTER_QTY
+---
+source:
+  url: ../Batch1/Industry.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - IN_ID
+      - IN_NAME
+      - IN_SC_ID
+---
+source:
+  url: ../Batch1/StatusType.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - ST_ID
+      - ST_NAME
+---
+source:
+  url: ../Batch1/TaxRate.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - TX_ID
+      - TX_NAME
+      - TX_RATE
+---
+source:
+  url: ../Batch1/Time.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - SK_TimeID
+      - TimeValue
+      - HourID
+      - HourDesc
+      - MinuteID
+      - MinuteDesc
+      - SecondID
+      - SecondDesc
+      - MarketHoursFlag
+      - OfficeHoursFlag
+    dtype:
+      MarketHoursFlag: str
+      OfficeHoursFlag: str
+---
+source:
+  url: ../Batch1/Trade.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - T_ID
+      - T_DTS
+      - T_ST_ID
+      - T_TT_ID
+      - T_IS_CASH
+      - T_S_SYMB
+      - T_QTY
+      - T_BID_PRICE
+      - T_CA_ID
+      - T_EXEC_NAME
+      - T_TRADE_PRICE
+      - T_CHRG
+      - T_COMM
+      - T_TAX
+---
+source:
+  url: ../Batch1/TradeHistory.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - TH_T_ID
+      - TH_DTS
+      - TH_ST_ID
+---
+source:
+  url: ../Batch1/TradeType.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - TT_ID
+      - TT_NAME
+      - TT_IS_SELL
+      - TT_IS_MRKT
+---
+source:
+  url: ../Batch1/WatchHistory.txt
+  read_csv:
+    header: None
+    sep: "|"
+    names:
+      - W_C_ID
+      - W_S_SYMB
+      - W_DTS
+      - W_ACTION
+---
+source:
+  url: ../Batch1/HR.csv
+  read_csv: 
+    header: None
+    names:
+      - EmployeeID
+      - ManagerID
+      - EmployeeFirstName
+      - EmployeeLastName
+      - EmployeeMI
+      - EmployeeJobCode
+      - EmployeeBranch
+      - EmployeeOffice
+      - EmployeePhone
+---
+source:
+  url: ../Batch1/Prospect.csv
+  read_csv: 
+    header: None
+    quoting: 3
+    names:
+      - AgencyID
+      - LastName
+      - FirstName
+      - MiddleInitial
+      - Gender
+      - AddressLine1
+      - AddressLine2
+      - PostalCode
+      - City
+      - State
+      - Country
+      - Phone
+      - Income
+      - NumberCars
+      - NumberChildren
+      - MaritalStatus
+      - Age
+      - CreditRating
+      - OwnOrRentFlag
+      - Employer
+      - NumberCreditCards
+      - NetWorth
+---
+source:
+  url: ../Batch1/FINWIRE.fwf
+  load_parallel: true
+  read_fwf: 
+    widths: [999]
+    names: [Record]
+target:
+  table: Finwire
+---
+source:
+  url: ../Batch1/CustomerMgmt.xml
+  read_xml:
+    stylesheet: D:\Sync\repos\eel-Dis\tpcdi\CustomerMgmt.xslt
+    dtype:
+      C_PHONE_1_CTRY_CODE: str
+      C_PHONE_1_AREA_CODE: str
+      C_PHONE_1_LOCAL: str
+      C_PHONE_1_EXT: str
+      C_PHONE_2_CTRY_CODE: str
+      C_PHONE_2_AREA_CODE: str
+      C_PHONE_2_LOCAL: str
+      C_PHONE_2_EXT: str
+      C_PHONE_3_CTRY_CODE: str
+      C_PHONE_3_AREA_CODE: str
+      C_PHONE_3_LOCAL: str
+      C_PHONE_3_EXT: str

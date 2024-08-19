@@ -1,0 +1,13 @@
+target:
+  url: mssql://localhost\ss2022/TPC_DI_Logging?driver=ODBC+Driver+17+for+SQL+Server
+  table: FileSizes
+  if_exists: truncate
+source:
+  read_csv:
+    sep: ':'
+    header: None
+    names:
+      - Property
+      - Value
+add_cols:
+  scale_factor: _file_name_base

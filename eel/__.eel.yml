@@ -1,0 +1,3 @@
+target:
+  url: mssql://localhost\ss2022/TPC_DI_DB?driver=ODBC+Driver+17+for+SQL+Server
+  if_exists: truncate
