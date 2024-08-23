@@ -1,0 +1,260 @@
+version: 1
+default_environment: dev
+project_id: 627c2567-37b7-4359-93f2-5d553caed24b
+environments:
+- name: dev
+- name: staging
+- name: prod
+send_anonymous_usage_stats: false
+plugins:
+  extractors:
+  - name: tap-spreadsheets-anywhere
+    variant: ets
+    pip_url: git+https://github.com/ets/tap-spreadsheets-anywhere.git
+    config:
+      tables:
+      - path: file://../Batch1/
+        name: BatchDate
+        pattern: BatchDate\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - BatchDate
+      - path: file://../Batch1/
+        name: CashTransaction
+        pattern: CashTransaction\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - CT_CA_ID
+        - CT_DTS
+        - CT_AMT
+        - CT_NAME
+      - path: file://../Batch1/
+        name: DailyMarket
+        pattern: DailyMarket\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - DM_DATE
+        - DM_S_SYMB
+        - DM_CLOSE
+        - DM_HIGH
+        - DM_LOW
+        - DM_VOL
+      - path: file://../Batch1/
+        name: Date
+        pattern: Date\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - SK_DateID
+        - DateValue
+        - DateDesc
+        - CalendarYearID
+        - CalendarYearDesc
+        - CalendarQtrID
+        - CalendarQtrDesc
+        - CalendarMonthID
+        - CalendarMonthDesc
+        - CalendarWeekID
+        - CalendarWeekDesc
+        - DayOfWeekNum
+        - DayOfWeekDesc
+        - FiscalYearID
+        - FiscalYearDesc
+        - FiscalQtrID
+        - FiscalQtrDesc
+        - HolidayFlag
+      - path: file://../Batch1/
+        name: Finwire
+        pattern: FINWIRE\.fwf
+        format: csv
+        delimiter: '`'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - Record
+      - path: file://../Batch1/
+        name: HoldingHistory
+        pattern: HoldingHistory\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - HH_H_T_ID
+        - HH_T_ID
+        - HH_BEFORE_QTY
+        - HH_AFTER_QTY
+      - path: file://../Batch1/
+        name: HR
+        pattern: HR\.csv
+        format: csv
+        delimiter: ','
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - EmployeeID
+        - ManagerID
+        - EmployeeFirstName
+        - EmployeeLastName
+        - EmployeeMI
+        - EmployeeJobCode
+        - EmployeeBranch
+        - EmployeeOffice
+        - EmployeePhone
+      - path: file://../Batch1/
+        name: Industry
+        pattern: Industry\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - IN_ID
+        - IN_NAME
+        - IN_SC_ID
+      - path: file://../Batch1/
+        name: Prospect
+        pattern: Prospect\.csv
+        format: csv
+        delimiter: ','
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - AgencyID
+        - LastName
+        - FirstName
+        - MiddleInitial
+        - Gender
+        - AddressLine1
+        - AddressLine2
+        - PostalCode
+        - City
+        - State
+        - Country
+        - Phone
+        - Income
+        - NumberCars
+        - NumberChildren
+        - MaritalStatus
+        - Age
+        - CreditRating
+        - OwnOrRentFlag
+        - Employer
+        - NumberCreditCards
+        - NetWorth
+      - path: file://../Batch1/
+        name: StatusType
+        pattern: StatusType\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - ST_ID
+        - ST_NAME
+      - path: file://../Batch1/
+        name: TaxRate
+        pattern: TaxRate\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - TX_ID
+        - TX_NAME
+        - TX_RATE
+      - path: file://../Batch1/
+        name: Time
+        pattern: Time\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - SK_TimeID
+        - TimeValue
+        - HourID
+        - HourDesc
+        - MinuteID
+        - MinuteDesc
+        - SecondID
+        - SecondDesc
+        - MarketHoursFlag
+        - OfficeHoursFlag
+      - path: file://../Batch1/
+        name: Trade
+        pattern: Trade\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - T_ID
+        - T_DTS
+        - T_ST_ID
+        - T_TT_ID
+        - T_IS_CASH
+        - T_S_SYMB
+        - T_QTY
+        - T_BID_PRICE
+        - T_CA_ID
+        - T_EXEC_NAME
+        - T_TRADE_PRICE
+        - T_CHRG
+        - T_COMM
+        - T_TAX
+      - path: file://../Batch1/
+        name: TradeHistory
+        pattern: TradeHistory\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - TH_T_ID
+        - TH_DTS
+        - TH_ST_ID
+      - path: file://../Batch1/
+        name: TradeType
+        pattern: TradeType\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - TT_ID
+        - TT_NAME
+        - TT_IS_SELL
+        - TT_IS_MRKT
+      - path: file://../Batch1/
+        name: WatchHistory
+        pattern: WatchHistory\.txt
+        format: csv
+        delimiter: '|'
+        start_date: '2017-05-01T00:00:00Z'
+        key_properties: []
+        field_names:
+        - W_C_ID
+        - W_S_SYMB
+        - W_DTS
+        - W_ACTION
+  loaders:
+  - name: target-mssql
+    variant: storebrand
+    pip_url: git+https://github.com/storebrand/target-mssql.git
+    config:
+      default_target_schema: meltano
+      host: localhost
+      database: TPC_DI_DB
+      port: '51063'

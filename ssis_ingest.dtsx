@@ -26,6 +26,7 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager DTS:refId="Package.ConnectionManagers[CustomerMgmt.xml]" DTS:CreationName="FILE" DTS:DTSID="{B5433360-F102-4962-8AFF-8A883EBD3383}" DTS:ObjectName="CustomerMgmt.xml">
+      <DTS:PropertyExpression DTS:Name="ConnectionString">@[Dynamic::BatchPath] + "CustomerMgmt.xml"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager DTS:ConnectionString="D:\ds\1F11EEBB-28C1-4605-B2D3-32940DB12F8A-TPC-DI-Tool\Tools\Data\SF3\Batch1\CustomerMgmt.xml" />
       </DTS:ObjectData>

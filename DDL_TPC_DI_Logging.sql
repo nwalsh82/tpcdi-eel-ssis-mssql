@@ -68,6 +68,13 @@ CREATE TABLE [dbo].[AuditDetailed](
 ) ON [PRIMARY]
 GO
 
+CREATE TABLE [dbo].[FileSizes](
+	[Property] [varchar](100) NULL,
+	[Value] [varchar](100) NULL,
+	[scale_factor] [varchar](100) NULL
+) ON [PRIMARY] 
+GO
+
 CREATE VIEW [dbo].[TPCDSLoggingReport] AS
 	SELECT S.RunID 'RunIdentifier'
 		, S.LogType 'BenchmarkStep'
@@ -78,13 +85,6 @@ CREATE VIEW [dbo].[TPCDSLoggingReport] AS
 	FROM [dbo].[Logging] S
 		INNER JOIN [dbo].[Logging] E
 			ON S.LogType = E.LogType AND S.ScaleFactor = E.ScaleFactor AND S.RunID = E.RunID AND S.OrderFlag = 'Start' AND E.OrderFlag = 'End'
-GO
-
-CREATE TABLE [dbo].[FileSizes](
-	[Property] [varchar](max) NULL,
-	[Value] [varchar](max) NULL,
-	[scale_factor] [varchar](max) NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
 create view vwAudit as
