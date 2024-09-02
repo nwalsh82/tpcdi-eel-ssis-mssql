@@ -11,7 +11,7 @@ $tpcdi_zip = "D:\ds\670A9CFA-BC2E-4D43-9801-77011F8843B5-TPC-DI-Tool.zip"
 # ABSOLUTE PATH OF MATERIALS tpcdi_eel_ssis_mssql.zip HERE:
 $tpcdi_eel_ssis_mssql_zip = "D:\ds\tpcdi-eel-ssis-mssql.zip"
 # PATH TO SQL SERVER 2022 INSTALLATION HERE, normally localhost or locahost\instance_name
-$sql_server_2022_path = "localhost:51063"
+$sql_server_2022_path = "localhost" # MANUAL TWEAKING MAY BE REQUREID FOR meltano.yml (if not localhost)
 
 # Define list of scalefactors
 $scaleFactors = @(3, 9, 27, 81)
